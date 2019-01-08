@@ -24,7 +24,7 @@ class TableViewController: UITableViewController {
     
     private func setupMainTableView(){
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
-        tableView.tableFooterView = UIView() //Pour supprimer le footer
+        tableView.tableFooterView = UIView() //Pour rien afficher en bas des cellules
         
         navigationItem.title = "Kindle"
     }
