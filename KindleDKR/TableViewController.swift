@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     
     var books: [Book]?
     
-    let cellID = "sqfskf"
+   private let cellID = "sqfskf"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +30,17 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! BookCell
         
-//        let currentBook = books?[indexPath.row]
-//        
-//        cell.textLabel?.text = currentBook?.title
-//        cell.imageView?.image = currentBook?.coverImage
+        let currentBook = books?[indexPath.row]
+        
+        cell.book = currentBook //Waw le pouvoir de l'encapsulation
+        
         return cell
     }
     

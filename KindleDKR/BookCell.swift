@@ -16,30 +16,37 @@ import UIKit
 class BookCell: UITableViewCell {
     
     
+    //Je vais observer la propriété book
+    var book : Book? {
+        didSet{
+            coverImage.image = book?.coverImage
+            titleLabel.text = book?.title
+            authorLabel.text = book?.author
+        }
+    }
+    
+    
     //-MARK:  SubView de la cellule
     
-    let coverImage: UIImageView = {
+   fileprivate let coverImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.orange
+        imageView.image = UIImage(named: "steve_jobs")
+        imageView.contentMode = .scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
         
     }()
     
-    let titleLabel: UILabel = {
+   fileprivate let titleLabel: UILabel = {
          let label = UILabel()
         label.text = "Titre du livre"
-        label.textAlignment = .center
-        label.backgroundColor = UIColor.blue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let authorLabel: UILabel = {
+   fileprivate let authorLabel: UILabel = {
         let label = UILabel()
         label.text = "Auteur du livre"
-        label.textAlignment = .center
-        label.backgroundColor = UIColor.red
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -47,7 +54,7 @@ class BookCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = UIColor.yellow
+//        backgroundColor = UIColor.yellow
         
         print("Cell is initialised")
         setupSubViews()
