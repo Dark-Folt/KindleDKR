@@ -80,7 +80,7 @@ class BookCell: UITableViewCell {
             titleLabel.heightAnchor.constraint(equalToConstant: 25),
             titleLabel.leadingAnchor.constraint(equalTo: coverImage.trailingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
+            titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10),
             
             //AuthorLabel constraint
             authorLabel.heightAnchor.constraint(equalToConstant: 25),
