@@ -13,6 +13,7 @@
 		E5ED8D1E21E53E90001C51D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5ED8D1C21E53E90001C51D3 /* LaunchScreen.storyboard */; };
 		E5ED8D2621E544F2001C51D3 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED8D2521E544F2001C51D3 /* Book.swift */; };
 		E5ED8D2821E54500001C51D3 /* Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED8D2721E54500001C51D3 /* Pages.swift */; };
+		E5ED8D2A21E54E42001C51D3 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED8D2921E54E42001C51D3 /* BookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E5ED8D1F21E53E90001C51D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5ED8D2521E544F2001C51D3 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		E5ED8D2721E54500001C51D3 /* Pages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pages.swift; sourceTree = "<group>"; };
+		E5ED8D2921E54E42001C51D3 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				E5ED8D1F21E53E90001C51D3 /* Info.plist */,
 				E5ED8D2521E544F2001C51D3 /* Book.swift */,
 				E5ED8D2721E54500001C51D3 /* Pages.swift */,
+				E5ED8D2921E54E42001C51D3 /* BookCell.swift */,
 			);
 			path = KindleDKR;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				E5ED8D1421E53E8E001C51D3 /* AppDelegate.swift in Sources */,
 				E5ED8D2821E54500001C51D3 /* Pages.swift in Sources */,
 				E5ED8D2621E544F2001C51D3 /* Book.swift in Sources */,
+				E5ED8D2A21E54E42001C51D3 /* BookCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

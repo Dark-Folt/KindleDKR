@@ -23,7 +23,7 @@ class TableViewController: UITableViewController {
     }
     
     private func setupMainTableView(){
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(BookCell.self, forCellReuseIdentifier: cellID)
         tableView.tableFooterView = UIView() //Pour rien afficher en bas des cellules
         
         navigationItem.title = "Kindle"
@@ -36,10 +36,11 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        cell.backgroundColor = UIColor.yellow
-        let currentBook = books?[indexPath.row]
-        cell.textLabel?.text = currentBook?.title
-        cell.imageView?.image = currentBook?.coverImage
+        
+//        let currentBook = books?[indexPath.row]
+//        
+//        cell.textLabel?.text = currentBook?.title
+//        cell.imageView?.image = currentBook?.coverImage
         return cell
     }
     
