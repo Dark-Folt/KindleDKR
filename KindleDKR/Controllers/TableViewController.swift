@@ -11,11 +11,11 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    
     var books: [Book]?
     var isDarkMode = false
     
     let defaults = UserDefaults.standard
-    
    private let cellID = "sqfskf"
 
     override func viewDidLoad() {
@@ -23,37 +23,34 @@ class TableViewController: UITableViewController {
         setupMainTableView()
         seupNavigationBarButtons()
         setupBooks()
-        checkForStylePreference()
 
     }
     
-    func checkForStylePreference(){
-        let prefersDarkMod = defaults.bool(forKey: Keys.prefersDarkMode)
-        
-        print(prefersDarkMod)
-        
-        if prefersDarkMod {
-            isDarkMode = true
-            updateStyle()
-        }
+    //Quand la vue s'affiche
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkForStylePreference()
     }
     
+    
+    //Je part chercher le theme
+    func checkForStylePreference(){
+        let prefersDarkMod = defaults.bool(forKey: Keys.prefersDarkMode)
+
+        if prefersDarkMod { // si prefersDarkMod == true
+            isDarkMode = true
+            updateStyle()
+        }else{
+            isDarkMode = false
+            updateStyle()
+        }
+        
+    }
     
     func updateStyle(){
         UIView.animate(withDuration: 0.4) {
-            self.tableView.backgroundColor = self.isDarkMode ? Colors.darkGrey : .white
+            self.tableView.backgroundColor = self.isDarkMode ? Theme.darkGrey : .white
         }
-        
-        if isDarkMode == true {
-            navigationController?.navigationBar.barTintColor = Colors.darkBarTint
-            navigationController?.navigationBar.isTranslucent = false
-            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-
-            
-        }else{
-            
-        }
-        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -75,7 +72,7 @@ class TableViewController: UITableViewController {
     }
     
     private func seupNavigationBarButtons(){
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(handleSettingsPressed))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings")?.withRenderingMode(.automatic), style: .plain, target: self, action: #selector(handleSettingsPressed))
     }
     
     @objc private func handleSettingsPressed(){
@@ -94,8 +91,11 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! BookCell
         
         let currentBook = books?[indexPath.row]
+    
+        let theme = defaults.bool(forKey: Keys.prefersDarkMode)
         
-        cell.book = currentBook //Waw le pouvoir de l'encapsulation
+        cell.book = currentBook//Waw le pouvoir de l'encapsulation
+        
         
         return cell
     }

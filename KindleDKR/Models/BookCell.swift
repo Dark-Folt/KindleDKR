@@ -15,7 +15,7 @@ import UIKit
 
 class BookCell: UITableViewCell {
     
-    
+     let defaults = UserDefaults.standard
     //Je vais observer la propriété book
     var book : Book? {
         didSet{
@@ -40,6 +40,7 @@ class BookCell: UITableViewCell {
    fileprivate let titleLabel: UILabel = {
          let label = UILabel()
         label.text = "Titre du livre"
+        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,6 +54,7 @@ class BookCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .clear
         setupSubViews()
     }
     

@@ -10,14 +10,17 @@ import UIKit
 
 class BookPagerController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var book: Book? 
+    var book: Book?
+    let defaults = UserDefaults.standard
     
     fileprivate let cellID = "SF"
+    //La reference à mon userdefaults
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationController()
         setupCollectionView()
+    
     }
     
     
@@ -55,6 +58,11 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let pageCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! PageCell
         let currentBook = book?.pages[indexPath.row]
+        
+        let theme = defaults.bool(forKey: Keys.prefersDarkMode)
+        
+        pageCell.backgroundColor = theme ? Theme.darkGrey : .white
+        pageCell.textLabel.textColor = theme ? UIColor.white : UIColor.black
         pageCell.textLabel.text = currentBook?.text
         return pageCell
     }

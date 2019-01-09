@@ -13,7 +13,6 @@ class PageCell: UICollectionViewCell {
     
     let textLabel : UILabel = {
         let label = UILabel()
-        label.text = "Un peut de text dans mes pasges Un peut de text dans mes pasgesUnUn peut de text dans mes pasges Un peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasges"
         label.numberOfLines = 0
         label.contentMode = .center
         label.font = UIFont.systemFont(ofSize: 16)
