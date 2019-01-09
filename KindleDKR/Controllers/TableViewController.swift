@@ -12,6 +12,9 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var books: [Book]?
+    var isDarkMode = false
+    
+    let defaults = UserDefaults.standard
     
    private let cellID = "sqfskf"
 
@@ -20,7 +23,41 @@ class TableViewController: UITableViewController {
         setupMainTableView()
         seupNavigationBarButtons()
         setupBooks()
+        checkForStylePreference()
 
+    }
+    
+    func checkForStylePreference(){
+        let prefersDarkMod = defaults.bool(forKey: Keys.prefersDarkMode)
+        
+        print(prefersDarkMod)
+        
+        if prefersDarkMod {
+            isDarkMode = true
+            updateStyle()
+        }
+    }
+    
+    
+    func updateStyle(){
+        UIView.animate(withDuration: 0.4) {
+            self.tableView.backgroundColor = self.isDarkMode ? Colors.darkGrey : .white
+        }
+        
+        if isDarkMode == true {
+            navigationController?.navigationBar.barTintColor = Colors.darkBarTint
+            navigationController?.navigationBar.isTranslucent = false
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+            
+        }else{
+            
+        }
+        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

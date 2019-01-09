@@ -8,6 +8,22 @@
 
 import UIKit
 
+class StatusBarPreferece: UINavigationController {
+    let defaults = UserDefaults.standard
+    
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        let prefersDarkMod = defaults.bool(forKey: Keys.prefersDarkMode)
+        
+        if prefersDarkMod == true {
+            return .lightContent
+        }
+        return .default
+    }
+}
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let MainTableViewController = TableViewController()
         
-        let navController = UINavigationController(rootViewController: MainTableViewController)
+        let navController = StatusBarPreferece(rootViewController: MainTableViewController)
         
         window?.rootViewController = navController
         
