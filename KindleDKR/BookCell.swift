@@ -53,10 +53,6 @@ class BookCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-//        backgroundColor = UIColor.yellow
-        
-        print("Cell is initialised")
         setupSubViews()
     }
     
@@ -94,10 +90,6 @@ class BookCell: UITableViewCell {
             authorLabel.leadingAnchor.constraint(equalTo: coverImage.trailingAnchor, constant: 16),
             authorLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
             authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4)
-            
-            
-            
-            
             
             ])
         

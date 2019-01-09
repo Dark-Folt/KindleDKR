@@ -21,19 +21,6 @@ class PageCell: UICollectionViewCell {
         return label
     }()
     
-//    let textView : UITextView = {
-//        let textView = UITextView()
-//        textView.text = "Un peut de text dans mes pasges Un peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasgesUn peut de text dans mes pasges"
-//        textView.isEditable = false
-//        textView.contentMode = .scaleAspectFit
-//        textView.contentMode = .center
-//        textView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        return textView
-//        
-//    }()
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviwes()
@@ -50,6 +37,6 @@ class PageCell: UICollectionViewCell {
         textLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5).isActive = true
         textLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 64).isActive = true
         textLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
-        textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
     }
 }
