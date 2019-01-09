@@ -51,6 +51,21 @@ class TableViewController: UITableViewController {
         return 0
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let selectedBook = self.books?[indexPath.row]
+        
+        let layout = UICollectionViewFlowLayout()
+        
+        let bookPagerController = BookPagerController(collectionViewLayout: layout)
+        bookPagerController.book = selectedBook
+        
+        navigationController?.pushViewController(bookPagerController, animated: true)
+        
+    }
+    
+    
     private func setupBooks(){
         let page1 = Page(text: "Text for the frist page", number: 1)
         let page2 = Page(text: "Text for the second page", number: 2)
