@@ -22,6 +22,7 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     
     
     private func setupCollectionView(){
+        collectionView.backgroundColor = UIColor.white
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: cellID)
         
         let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
@@ -33,7 +34,7 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     private func setupNavigationController(){
         navigationItem.title = book?.title
         navigationController?.navigationBar.backgroundColor = .white
-        navigationController?.navigationBar.tintColor = .black
+//        navigationController?.navigationBar.tintColor = .black
     }
     
     

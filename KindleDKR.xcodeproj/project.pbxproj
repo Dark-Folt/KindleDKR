@@ -16,6 +16,10 @@
 		E5ED8D2A21E54E42001C51D3 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED8D2921E54E42001C51D3 /* BookCell.swift */; };
 		E5ED8D2C21E55F22001C51D3 /* BookPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED8D2B21E55F22001C51D3 /* BookPagerController.swift */; };
 		E5ED8D2E21E56C71001C51D3 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED8D2D21E56C71001C51D3 /* PageCell.swift */; };
+		E5ED8D3021E58872001C51D3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED8D2F21E58872001C51D3 /* SettingsViewController.swift */; };
+		E5ED8D3521E590DA001C51D3 /* SAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED8D3421E590DA001C51D3 /* SAButton.swift */; };
+		E5ED8D3721E5913A001C51D3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED8D3621E5913A001C51D3 /* Constant.swift */; };
+		E5ED8D3921E59BC1001C51D3 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED8D3821E59BC1001C51D3 /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		E5ED8D2921E54E42001C51D3 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		E5ED8D2B21E55F22001C51D3 /* BookPagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPagerController.swift; sourceTree = "<group>"; };
 		E5ED8D2D21E56C71001C51D3 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		E5ED8D2F21E58872001C51D3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E5ED8D3421E590DA001C51D3 /* SAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAButton.swift; sourceTree = "<group>"; };
+		E5ED8D3621E5913A001C51D3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E5ED8D3821E59BC1001C51D3 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +70,46 @@
 		E5ED8D1221E53E8E001C51D3 /* KindleDKR */ = {
 			isa = PBXGroup;
 			children = (
+				E5ED8D3121E58A82001C51D3 /* Models */,
+				E5ED8D3221E58A9B001C51D3 /* Views */,
+				E5ED8D3321E58ABF001C51D3 /* Controllers */,
 				E5ED8D1321E53E8E001C51D3 /* AppDelegate.swift */,
-				E5ED8D1521E53E8E001C51D3 /* TableViewController.swift */,
 				E5ED8D1A21E53E90001C51D3 /* Assets.xcassets */,
 				E5ED8D1C21E53E90001C51D3 /* LaunchScreen.storyboard */,
 				E5ED8D1F21E53E90001C51D3 /* Info.plist */,
+			);
+			path = KindleDKR;
+			sourceTree = "<group>";
+		};
+		E5ED8D3121E58A82001C51D3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				E5ED8D2521E544F2001C51D3 /* Book.swift */,
 				E5ED8D2721E54500001C51D3 /* Pages.swift */,
 				E5ED8D2921E54E42001C51D3 /* BookCell.swift */,
-				E5ED8D2B21E55F22001C51D3 /* BookPagerController.swift */,
 				E5ED8D2D21E56C71001C51D3 /* PageCell.swift */,
+				E5ED8D3421E590DA001C51D3 /* SAButton.swift */,
+				E5ED8D3621E5913A001C51D3 /* Constant.swift */,
+				E5ED8D3821E59BC1001C51D3 /* Keys.swift */,
 			);
-			path = KindleDKR;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E5ED8D3221E58A9B001C51D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E5ED8D3321E58ABF001C51D3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5ED8D1521E53E8E001C51D3 /* TableViewController.swift */,
+				E5ED8D2B21E55F22001C51D3 /* BookPagerController.swift */,
+				E5ED8D2F21E58872001C51D3 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,12 +183,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5ED8D2C21E55F22001C51D3 /* BookPagerController.swift in Sources */,
+				E5ED8D3521E590DA001C51D3 /* SAButton.swift in Sources */,
 				E5ED8D1621E53E8E001C51D3 /* TableViewController.swift in Sources */,
 				E5ED8D1421E53E8E001C51D3 /* AppDelegate.swift in Sources */,
+				E5ED8D3921E59BC1001C51D3 /* Keys.swift in Sources */,
 				E5ED8D2821E54500001C51D3 /* Pages.swift in Sources */,
 				E5ED8D2621E544F2001C51D3 /* Book.swift in Sources */,
 				E5ED8D2A21E54E42001C51D3 /* BookCell.swift in Sources */,
+				E5ED8D3721E5913A001C51D3 /* Constant.swift in Sources */,
 				E5ED8D2E21E56C71001C51D3 /* PageCell.swift in Sources */,
+				E5ED8D3021E58872001C51D3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

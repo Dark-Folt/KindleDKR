@@ -18,16 +18,35 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainTableView()
+        seupNavigationBarButtons()
         setupBooks()
 
     }
     
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    
     private func setupMainTableView(){
         tableView.register(BookCell.self, forCellReuseIdentifier: cellID)
+        
         tableView.tableFooterView = UIView() //Pour rien afficher en bas des cellules
         
         navigationItem.title = "Kindle"
+        navigationController?.navigationBar.tintColor = .black
     }
+    
+    private func seupNavigationBarButtons(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(handleSettingsPressed))
+    }
+    
+    @objc private func handleSettingsPressed(){
+        let settingsController = SettingsViewController()
+        navigationController?.pushViewController(settingsController, animated: true)
+        
+    }
+    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
