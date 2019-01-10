@@ -1,17 +1,16 @@
-//
+
 //  BookCell.swift
 //  KindleDKR
 //
 //  Created by Kamil Ben on 08/01/2019.
 //  Copyright © 2019 Dark Folt. All rights reserved.
-//
 
 import UIKit
-
 
 /* Elle va me permtre de customiser mes cellules
  car je ne peux pas le faire avec le storyBoard parce que je l'ai supprimé
 */
+
 struct BookLabelColors{
     static let blackWhrote : UIColor = .black
     static let whiteWhrote : UIColor = .white
@@ -30,7 +29,6 @@ class BookCell: UITableViewCell {
             authorLabel.text = book?.author
         }
     }
-    
     
     //-MARK:  SubView de la cellule
     

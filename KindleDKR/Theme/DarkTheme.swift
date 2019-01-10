@@ -10,6 +10,7 @@ import UIKit
 
 class DarkTheme: ThemeProtocol {
     
+    var segmentedTintColor: UIColor = UIColor.black
     var fontColor: UIColor = UIColor.black
     var backgroundColor: UIColor = UIColor.white
     

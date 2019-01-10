@@ -11,4 +11,5 @@ import UIKit
 protocol ThemeProtocol {
     var fontColor : UIColor {get}
     var backgroundColor : UIColor {get}
+    var segmentedTintColor : UIColor {get}
 }

@@ -31,6 +31,7 @@ class TableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         checkForStylePreference()
+        
     }
     
     
@@ -50,8 +51,10 @@ class TableViewController: UITableViewController {
     
     func updateStyle(){
         UIView.animate(withDuration: 0.4) {
-            self.tableView.backgroundColor = self.isDarkMode ? Theme.darkGrey : .white
+            self.tableView.backgroundColor = Theme.currentTheme.backgroundColor
+            
         }
+        tableView.reloadData()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -96,8 +99,12 @@ class TableViewController: UITableViewController {
         
         let currentBook = books?[indexPath.row]
     
+        //Constant de la font couleur
+        let fontColor = Theme.currentTheme.fontColor
         cell.titleLabel.text = currentBook?.title
+        cell.titleLabel.textColor = fontColor
         cell.authorLabel.text = currentBook?.author
+        cell.authorLabel.textColor = fontColor
         cell.coverImage.image = currentBook?.coverImage
 
         return cell

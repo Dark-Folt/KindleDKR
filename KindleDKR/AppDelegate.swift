@@ -42,6 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = navController
         
+        //Je par définir mon theme en partant chercher dans mon userDefaults
+        Theme.currentTheme = UserDefaults.standard.bool(forKey: Keys.prefersDarkMode) ? DarkTheme() : LightTheme()
+        
         return true
     }
 

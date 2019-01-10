@@ -9,8 +9,7 @@
 import UIKit
 
 class PageCell: UICollectionViewCell {
-    
-    
+
     let textLabel : UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
