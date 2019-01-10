@@ -49,7 +49,7 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     
     
     
-    //MARK: CollectionView Methodes
+    //MARK: CollectionView Methods
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return book?.pages.count ?? 0 //Je retourne le nombre de page dispo dans mon book
     }
@@ -57,7 +57,6 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let pageCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! PageCell
         let currentBook = book?.pages[indexPath.row]
-
         pageCell.backgroundColor = Theme.currentTheme.backgroundColor
         pageCell.textLabel.textColor = Theme.currentTheme.fontColor
         pageCell.textLabel.text = currentBook?.text

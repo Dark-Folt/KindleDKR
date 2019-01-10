@@ -37,9 +37,6 @@ class SettingsViewController: UIViewController {
         saveStylePreference()
     }
     
-    fileprivate func applyTheme() {
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-    }
     
     //MARK: Setup User Default
     var isDarkMode = false
@@ -49,19 +46,11 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        view.backgroundColor = .white
         setupNavBar()
         setupSubViews()
         checkForStylePreference()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//        updateStyle()
-//    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.view.backgroundColor = Theme.currentTheme.backgroundColor
@@ -69,17 +58,17 @@ class SettingsViewController: UIViewController {
     
     func updateStyle(){
         UIView.animate(withDuration: 0.4) {
-//            self.view.backgroundColor = self.isDarkMode ? .black : .white
             self.view.backgroundColor = Theme.currentTheme.backgroundColor
 
         }
     }
-    
-    
+
+    //TODO: - Setup my Navigation bar
     private func setupNavBar(){
         navigationItem.title = "Settings"
     }
     
+    //TODO:- Adding my subViews
     private func setupSubViews(){
         view.addSubview(styleSegmentedControl)
         styleSegmentedControl.widthAnchor.constraint(equalToConstant: 350).isActive = true
@@ -89,6 +78,7 @@ class SettingsViewController: UIViewController {
         
     }
     
+    //MARK- Interacting with UserDefaults
     func saveStylePreference(){
         defaults.set(isDarkMode, forKey: Keys.prefersDarkMode)
     }
