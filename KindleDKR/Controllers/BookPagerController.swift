@@ -43,7 +43,7 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     
     //MARK: Delegate methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = (view.frame.height)-64
+        let height = (view.frame.height) - 64
         let width = view.frame.width
         return CGSize(width: width, height: height)
     }

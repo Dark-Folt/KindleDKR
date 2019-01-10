@@ -12,11 +12,17 @@ import UIKit
 /* Elle va me permtre de customiser mes cellules
  car je ne peux pas le faire avec le storyBoard parce que je l'ai supprimé
 */
+struct BookLabelColors{
+    static let blackWhrote : UIColor = .black
+    static let whiteWhrote : UIColor = .white
+}
+
+
 
 class BookCell: UITableViewCell {
     
-     let defaults = UserDefaults.standard
     //Je vais observer la propriété book
+    let defaults = UserDefaults.standard
     var book : Book? {
         didSet{
             coverImage.image = book?.coverImage
@@ -28,7 +34,7 @@ class BookCell: UITableViewCell {
     
     //-MARK:  SubView de la cellule
     
-   fileprivate let coverImage: UIImageView = {
+    let coverImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "steve_jobs")
         imageView.contentMode = .scaleToFill
@@ -37,15 +43,14 @@ class BookCell: UITableViewCell {
         
     }()
     
-   fileprivate let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
          let label = UILabel()
         label.text = "Titre du livre"
-        label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-   fileprivate let authorLabel: UILabel = {
+    let authorLabel: UILabel = {
         let label = UILabel()
         label.text = "Auteur du livre"
         label.translatesAutoresizingMaskIntoConstraints = false

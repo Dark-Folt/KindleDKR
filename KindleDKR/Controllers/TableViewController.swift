@@ -24,6 +24,7 @@ class TableViewController: UITableViewController {
         seupNavigationBarButtons()
         setupBooks()
 
+
     }
     
     //Quand la vue s'affiche
@@ -68,10 +69,13 @@ class TableViewController: UITableViewController {
         tableView.tableFooterView = UIView() //Pour rien afficher en bas des cellules
         
         navigationItem.title = "Kindle"
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = self.isDarkMode ? UIColor.yellow : UIColor.black
     }
     
     private func seupNavigationBarButtons(){
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "settings")?.withRenderingMode(.automatic), style: .plain, target: self, action: #selector(handleSettingsPressed))
     }
     
@@ -92,11 +96,10 @@ class TableViewController: UITableViewController {
         
         let currentBook = books?[indexPath.row]
     
-        let theme = defaults.bool(forKey: Keys.prefersDarkMode)
-        
-        cell.book = currentBook//Waw le pouvoir de l'encapsulation
-        
-        
+        cell.titleLabel.text = currentBook?.title
+        cell.authorLabel.text = currentBook?.author
+        cell.coverImage.image = currentBook?.coverImage
+
         return cell
     }
     
