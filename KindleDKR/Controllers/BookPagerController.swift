@@ -46,6 +46,11 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = view.frame.height - 116
         let width = view.frame.width
+        
+        if UIDeviceOrientation.landscapeLeft.isLandscape {
+            return CGSize(width: width, height: height)
+        }
+
         return CGSize(width: width, height: height)
     }
     

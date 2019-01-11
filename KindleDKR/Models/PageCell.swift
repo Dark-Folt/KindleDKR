@@ -13,8 +13,10 @@ class PageCell: UICollectionViewCell {
     let textLabel : UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.contentMode = UIView.ContentMode.scaleAspectFit
+        label.textAlignment = NSTextAlignment.justified
         label.font = UIFont.systemFont(ofSize: 16)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 10 / UIFont.labelFontSize
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
