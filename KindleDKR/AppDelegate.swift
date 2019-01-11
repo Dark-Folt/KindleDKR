@@ -8,16 +8,10 @@
 
 import UIKit
 
-class StatusBarPreferece: UINavigationController {
-    let defaults = UserDefaults.standard
-    
 
+//It's for applying my status barStyle on both modes
+class StatusBarPreferece: UINavigationController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        let prefersDarkMod = defaults.bool(forKey: Keys.prefersDarkMode)
-        
-        if prefersDarkMod == true {
-            return .lightContent
-        }
         return .default
     }
 }
@@ -33,19 +27,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //Creating my View
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let MainTableViewController = TableViewController()
+       /* let MainTableViewController = TableViewController()
         
+        //I want a navigationBa on the top of my App
         let navController = StatusBarPreferece(rootViewController: MainTableViewController)
         
-        window?.rootViewController = navController
+        //This navigation controller will be the root View controller
+        window?.rootViewController = navController*/
         
+        self.launchScreen()
         //Je par définir mon theme en partant chercher dans mon userDefaults
         Theme.currentTheme = UserDefaults.standard.bool(forKey: Keys.prefersDarkMode) ? DarkTheme() : LightTheme()
         
         return true
+    }
+    
+    //MARK- My Own Launch Screen demo with time duration
+    private func launchScreen(){
+        let launchScreenVC = UIStoryboard(name: "LaunchScreen", bundle: nil)
+        let rootVC = launchScreenVC.instantiateViewController(withIdentifier: "splachScreen")
+        self.window?.rootViewController = rootVC
+        self.window?.makeKeyAndVisible()
+        Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(dissmissLaunchScreen), userInfo: nil, repeats: false)
+    }
+    
+    @objc private func dissmissLaunchScreen(){
+            let MainTableViewController = TableViewController()
+         
+            //I want a navigationBa on the top of my App
+            let navController = StatusBarPreferece(rootViewController: MainTableViewController)
+         
+            //This navigation controller will be the root View controller
+            window?.rootViewController = navController
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

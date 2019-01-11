@@ -12,4 +12,5 @@ protocol ThemeProtocol {
     var fontColor : UIColor {get}
     var backgroundColor : UIColor {get}
     var segmentedTintColor : UIColor {get}
+    var scrollColorIndicator : UIScrollView.IndicatorStyle {get}
 }

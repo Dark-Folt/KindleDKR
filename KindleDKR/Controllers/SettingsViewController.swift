@@ -22,6 +22,7 @@ class SettingsViewController: UIViewController {
         return segmentedControl
     }()
     
+    //This is my target methods
     @objc func handleSegmented(_ sender: UISegmentedControl){
         
         isDarkMode = sender.selectedSegmentIndex == 1
@@ -53,9 +54,11 @@ class SettingsViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.view.backgroundColor = Theme.currentTheme.backgroundColor
     }
     
+    //TODO: - Interacting with the View
     func updateStyle(){
         UIView.animate(withDuration: 0.4) {
             self.view.backgroundColor = Theme.currentTheme.backgroundColor
@@ -85,9 +88,6 @@ class SettingsViewController: UIViewController {
 
     func checkForStylePreference(){
         let prefersDarkMod = defaults.bool(forKey: Keys.prefersDarkMode)
-
-        print(prefersDarkMod)
-
         if prefersDarkMod {
             isDarkMode = true
             updateStyle()

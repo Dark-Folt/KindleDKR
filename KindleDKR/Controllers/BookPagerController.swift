@@ -23,12 +23,14 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     
     }
     
-    
+    //TODO: -Setup collectionView
     private func setupCollectionView(){
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = Theme.currentTheme.backgroundColor
+        collectionView.indicatorStyle = Theme.currentTheme.scrollColorIndicator
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: cellID)
         
         let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.itemSize = UICollectionViewFlowLayout.automaticSize
         layout?.scrollDirection = .horizontal
         layout?.minimumLineSpacing = 0 //Reduire les espages entre les pages
         collectionView.isPagingEnabled = true //Pagination OK
@@ -42,7 +44,7 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     
     //MARK: Delegate methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = ((view.frame.height) - 64)
+        let height = view.frame.height - 116
         let width = view.frame.width
         return CGSize(width: width, height: height)
     }

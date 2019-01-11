@@ -10,6 +10,7 @@ import UIKit
 
 class LightTheme: ThemeProtocol {
     
+    var scrollColorIndicator: UIScrollView.IndicatorStyle = .white
     var segmentedTintColor: UIColor = UIColor.white
     var fontColor: UIColor = UIColor.white
     var backgroundColor: UIColor = UIColor.black
