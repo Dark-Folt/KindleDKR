@@ -38,15 +38,8 @@ class TableViewController: UITableViewController {
     //Je part chercher le theme
     func checkForStylePreference(){
         let prefersDarkMod = defaults.bool(forKey: Keys.prefersDarkMode)
-
-        if prefersDarkMod { // si prefersDarkMod == true
-            isDarkMode = true
-            updateStyle()
-        }else{
-            isDarkMode = false
-            updateStyle()
-        }
-        
+        isDarkMode = prefersDarkMod ? true : false //bisou
+        updateStyle()
     }
     
     func updateStyle(){
@@ -161,7 +154,7 @@ class TableViewController: UITableViewController {
         let pages = [page1,page2,page3]
 
         let book1 = Book(title: "Steve Jobs", author: "Walter Isacson", coverImage: UIImage(named: "steve_jobs")!, pages: pages)
-        let book2 = Book(title: "Bils Gates", author: "Je ne sais pas", coverImage: UIImage(named: "bill_gates")!, pages: [
+        let book2 = Book(title: "Bils Gates", author: "Michael Becraft", coverImage: UIImage(named: "bill_gates")!, pages: [
             Page(text: """
 Entrepreneur Bill Gates, born on October 28, 1955, in Seattle, Washington, began to show an interest in computer
 programming at the age of 13. Through technological innovation, keen business strategy, and aggressive competitive tactics, he
@@ -208,8 +201,14 @@ program for the school.
 """, number: 4)
             
             ])
+        
+        let book3 = Book(title: "See What I have done", author: "Sarah Schmidt", coverImage: UIImage(named: "image1")!, pages: [Page(text: "Text for the text", number: 1)])
+        
+        let book4 = Book(title: "SuperMan", author: "Marvel", coverImage: UIImage(named: "image4")!, pages: [Page(text: "qdfsfs", number: 1)])
+        let book5 = Book(title: "Birds in the Ancient World", author: "Jeremy", coverImage: UIImage(named: "image2")!, pages: [Page(text: "sqfs", number: 1)])
+        let book6 = Book(title: "IS birdsong music ?", author: "Hollis Taylor", coverImage: UIImage(named: "image3")!, pages: [Page(text: "qsdf", number: 1)])
 
-        self.books = [book1,book2]
+        self.books = [book1,book2,book3,book4,book5,book6]
         
     }
 

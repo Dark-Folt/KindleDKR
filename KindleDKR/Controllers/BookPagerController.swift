@@ -55,7 +55,6 @@ class BookPagerController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     
-    
     //MARK: CollectionView Methods
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return book?.pages.count ?? 0 //Je retourne le nombre de page dispo dans mon book
